@@ -5,11 +5,23 @@ const queryPublishedPosts = async () => {
     where: {
       published: true,
     },
+    select: {
+      id: true,
+      title: true,
+      createdAt: true,
+    },
   });
 };
 
 const queryAllPosts = async () => {
-  return await prisma.post.findMany();
+  return await prisma.post.findMany({
+    select: {
+      id: true,
+      title: true,
+      createdAt: true,
+      published: true,
+    },
+  });
 };
 
 const queryPostsById = async (id) => {
