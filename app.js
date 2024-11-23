@@ -14,7 +14,7 @@ const cookieParser = require("cookie-parser");
 //set origin and credentials to true later
 app.use(
   cors({
-    methods: ["POST", "PUT", "DELETE"],
+    origin: "http://localhost:5173",
     credentials: true,
   })
 );
