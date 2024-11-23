@@ -46,7 +46,9 @@ const errorHandler = (error, req, res, next) => {
   } else if (error.name === "JsonWebTokenError") {
     return res.status(401).json({ error: "token missing or invalid" });
   } else if (error.name === "TokenExpiredError") {
-    return res.status(401).json({ error: "token expired" });
+    return res
+      .status(401)
+      .json({ error: "TOKEN_EXPIRED", message: "your session has expired" });
   }
   logger.error(error);
   next(error);
