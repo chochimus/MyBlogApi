@@ -10,7 +10,7 @@ const {
 const { queryPostsById } = require("../db/queryblogs");
 
 const commentValidator = [
-  body("content").trim().notEmpty().withMessage("Content required").escape(),
+  body("content").trim().notEmpty().withMessage("Content required").isString(),
 ];
 commentsRouter.post("/", userExtractor, commentValidator, async (req, res) => {
   if (!req.user) {
