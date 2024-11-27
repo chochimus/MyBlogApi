@@ -10,6 +10,7 @@ const logoutRouter = require("./controllers/logout");
 
 const middleware = require("./utils/middleware");
 const cookieParser = require("cookie-parser");
+const checkLogin = require("./controllers/check-login");
 
 //set origin and credentials to true later
 app.use(
@@ -23,6 +24,7 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(middleware.requestLogger);
 
+app.use("/api/check-login", checkLogin);
 app.use("/api/blogs", blogsRouter);
 app.use("/api/users", usersRouter);
 app.use("/api/logout", logoutRouter);
