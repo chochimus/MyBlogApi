@@ -2,7 +2,7 @@ const { userExtractor } = require("../utils/middleware");
 
 const checkLogin = require("express").Router();
 
-checkLogin.get("/check-login", userExtractor, (req, res) => {
+checkLogin.get("/", userExtractor, (req, res) => {
   if (req.user) {
     res.json({ loggedIn: true, user: req.user });
   } else {
