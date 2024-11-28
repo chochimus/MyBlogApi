@@ -47,7 +47,7 @@ commentsRouter.delete("/:commentId", userExtractor, async (req, res) => {
     return res.status(404).json({ error: "comment not found" });
   }
 
-  if (req.user.id !== commentAuthor.id && req.user.role !== "ADMIN") {
+  if (req.user.id !== commentAuthor.id || req.user.role !== "ADMIN") {
     return res.status(403).json({ error: "Access denied." });
   }
   await queryDeleteComment(req.params.commentId);
