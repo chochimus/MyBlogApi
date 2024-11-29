@@ -16,8 +16,8 @@ const checkLogin = require("./controllers/check-login");
 app.use(
   cors({
     origin: [
-      "https://precious-gingersnap-800886.netlify.app/",
-      "http://localhost:5174",
+      "https://precious-gingersnap-800886.netlify.app",
+      "https://charming-kulfi-14d4aa.netlify.app",
     ],
     credentials: true,
   })
