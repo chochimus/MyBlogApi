@@ -4,7 +4,17 @@ This is a backend API designed to power a blog application, including functional
 
 ### Why?
 
-The purpose of this project is to practice and refine backend development skills while creating a functional and flexible blog platform. Also, why not?
+The purpose of this project is to practice and refine backend development skills while creating a functional and flexible blog platform.
+
+### Technologies Used
+
+- **RESTful**
+- **Prisma ORM(postgresql)**
+- **Javascript(es6)**
+- **Express**
+  - express-validator
+  - custom solution for json web token
+  - protected routes
 
 ### QuickStart
 
